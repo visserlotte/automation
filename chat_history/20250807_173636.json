@@ -1,0 +1,22 @@
+[
+  {
+    "id": "6eb7c04c-fd72-47aa-aff6-43a61293388f",
+    "role": "user",
+    "content": "/run echo integration test"
+  },
+  {
+    "id": "1ad8846f-dbf3-4cbd-83f3-20eda0c4618d",
+    "role": "assistant",
+    "content": "\ud83d\udee0\ufe0f  Running goal: echo integration test"
+  },
+  {
+    "id": "1b4697ff-c971-488b-99e3-f94cabb73d54",
+    "role": "user",
+    "content": "/run echo smoke test"
+  },
+  {
+    "id": "ae68d153-c0be-4e61-b38a-f7738339eb07",
+    "role": "assistant",
+    "content": "\ud83d\udee0\ufe0f  Running goal: echo smoke test"
+  }
+]

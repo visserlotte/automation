@@ -1,0 +1,48 @@
+1. 
+PHASE 0  –  Guard-rails
+--------------------------------
+1. Modify planner.plan() so it:
+   • Splits any large mission into micro-projects of ≤ 2 files each.
+   • Requires all micro-projects to pass tests before scheduling the next.
+2. Modify executor.apply_plan() so it auto-installs missing PyPI deps
+   and appends them to requirements.txt.
+
+PHASE 1 –  Core browser GUI  (streamlit_chat.py)
+--------------------------------
+1. Generate streamlit_chat.py that opens at http://localhost:8501 with:
+   • Left sidebar of conversations (future folders/tabs)
+   • Main chat area with bubbles
+   • Right columns:   – Thoughts (live)   – Doing (activity log)
+   • Bottom text box + Send button
+2. Wire the Send button to call master_ai.gpt_chat asynchronously
+   and stream replies back into bubbles.
+3. Expose a settings drawer that lets the user change the visible name
+   (default: "MasterAI").
+
+PHASE 2 –  Model auto-selection (model_selector.py)
+--------------------------------
+1. Build model_selector.py that:
+   • Maintains a JSON table of model ↔ price /1K tokens
+   • Exposes choose_model(task_type:str) → model_id
+   • Prefers the cheapest model that meets the quality flag required
+2. Patch ai_helpers.ai_utils.gpt() to call model_selector.choose_model()
+   unless a specific model is forced by the user.
+
+PHASE 3 –  Deep research & long contexts
+--------------------------------
+1. Implement research_agent.py that breaks a deep-research request into
+   3K-token chunks, stores notes in ./research_logs, and streams the
+   summary back to the GUI.
+2. Add a 'Research' button next to Send that routes the prompt through
+   research_agent instead of gpt_chat.
+
+PHASE 4 –  Polish
+--------------------------------
+1. Add CSS to streamlit_chat.py so bubbles, sidebar and right panes match
+   ChatGPT aesthetics (rounded corners, soft shadows).
+2. Persist conversation history to ./chat_history/*.json so tabs reload
+   on refresh.
+
+Each phase is its own micro-project.  Process phases sequentially.
+Write or update no more than TWO files per micro-project.
+Ensure pytest passes before moving on.

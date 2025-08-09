@@ -1,0 +1,6 @@
+{"ts": "2025-08-08T21:33:25", "kind": "run_started", "data": {"run_id": "20250808_213325", "goal": "say hello", "safe": true}}
+{"ts": "2025-08-08T21:33:25", "kind": "plan_ready", "data": {"steps": [{"name": "Say hello", "cmd": "echo \"hello from agent\""}]}}
+{"ts": "2025-08-08T21:33:25", "kind": "thought", "data": {"text": "Step 1/1: Say hello — echo \"hello from agent\""}}
+{"ts": "2025-08-08T21:33:25", "kind": "log", "data": {"step": 1, "line": "hello from agent"}}
+{"ts": "2025-08-08T21:33:25", "kind": "action_done", "data": {"step": 1, "rc": 0, "seconds": 0.0, "log": "artifacts/runs/20250808_213325/logs/step_1.log"}}
+{"ts": "2025-08-08T21:33:25", "kind": "run_finished", "data": {"result": "OK"}}

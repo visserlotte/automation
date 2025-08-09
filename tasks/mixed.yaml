@@ -1,0 +1,6 @@
+steps:
+  - goal: pip: install pyyaml
+    retries: 1
+  - goal: fetch: https://httpbin.org/robots.txt -> dl/robots.txt
+    retries: 2
+  - goal: run: echo "done"

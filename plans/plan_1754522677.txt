@@ -1,0 +1,6 @@
+1. 1. **Review and Analyze Existing Code:**
+2. 2. **Modify the `gpt()` Function:**
+3. 3. **Verify Integration and Refactor:**
+4. 4. **Update and Expand Unit Tests:**
+5. 5. **Conduct Thorough Testing:**
+6. 6. **Review and Document Changes:**

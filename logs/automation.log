@@ -1,0 +1,230 @@
+2025-07-07 23:32:08,170 - INFO - System started
+2025-07-09 01:57:16,528  INFO  System started
+2025-07-09 01:57:16,530  INFO  AI-Agent ready. Polling Gmail every 60 s
+2025-07-09 01:57:16,534  ERROR  Failed to send e-mail: type object 'Credentials' has no attribute 'from_authorized_user_pickle'
+2025-07-09 02:25:44,368  INFO  System started
+2025-07-09 02:25:44,368  INFO  AI-Agent ready. Polling Gmail every 60 s
+2025-07-09 02:25:44,371  ERROR  Failed to send e-mail: type object 'Credentials' has no attribute 'from_authorized_user_pickle'
+2025-07-09 02:43:34,870  INFO │ ╭─ Automation system booted successfully
+2025-07-09 02:47:36,162 INFO 🚀 AI-Automation system booted successfully
+2025-07-09 02:47:36,162 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:47:36,163 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:48:39,164 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:48:39,164 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:49:42,164 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:49:42,165 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:50:45,165 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:50:45,165 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:51:48,166 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:51:48,166 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:52:51,167 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:52:51,167 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:53:13,474 INFO 🚀 AI-Automation system booted successfully
+2025-07-09 02:53:13,475 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:53:13,475 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:54:16,476 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:54:16,476 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:55:19,477 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:55:19,477 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:56:22,478 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:56:22,478 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:57:25,478 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:57:25,479 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:58:28,479 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:58:28,479 INFO No automatic fix; will retry unchanged.
+2025-07-09 02:59:31,480 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 02:59:31,480 INFO No automatic fix; will retry unchanged.
+2025-07-09 03:00:34,481 ERROR Crash:
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 94, in main
+    process()
+  File "/home/ubuntu/automation/ai_agent.py", line 67, in process
+    svc = gmail_service()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai_agent.py", line 48, in gmail_service
+    raise RuntimeError("token.pickle missing – run scripts/gmail_auth.py once")
+RuntimeError: token.pickle missing – run scripts/gmail_auth.py once
+
+2025-07-09 03:00:34,481 INFO No automatic fix; will retry unchanged.
+2025-07-09 03:01:32,392 | WARNING | Gmail needs one-time auth - visit:
+https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=411863826526-4q9g8vkn1vjoam3s9008pq72nrpmn1u2.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify&state=TNojQgig7iY6BzOMwYlScEw1RVz9Ml&prompt=consent&access_type=offline
+2025-07-09 03:03:56,446 | WARNING | stopped by user – goodbye
+2025-07-09 03:05:00,649 | WARNING | Gmail needs one-time auth - visit:
+https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=411863826526-4q9g8vkn1vjoam3s9008pq72nrpmn1u2.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify&state=zcoAuYcDLhEACPkR9OFTSICWyc3xOz&prompt=consent&access_type=offline
+2025-07-09 03:07:52,619 | WARNING | Gmail needs one-time auth - visit:
+https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=411863826526-4q9g8vkn1vjoam3s9008pq72nrpmn1u2.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify&state=62Yq524EvCe1CfVdxNF1pKFOTMeO50&prompt=consent&access_type=offline
+2025-07-09 03:13:25,161 | WARNING | stopped by user – goodbye
+2025-07-09 03:17:42,580 | INFO | AI-Agent started; polling every 60 s
+2025-07-09 03:17:42,807 | WARNING | Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-07-09 03:17:42,808 | ERROR | Crash: Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 83, in poll_loop
+    ).execute()
+      ^^^^^^^^^
+  File "/home/ubuntu/automation/automation-env/lib/python3.12/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/automation-env/lib/python3.12/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/197ed191ee2613bf/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+
+2025-07-09 03:17:42,876 | WARNING | Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-07-09 03:17:42,876 | ERROR | Could not send crash email: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/send?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-07-09 03:18:13,096 | WARNING | Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-07-09 03:18:13,097 | ERROR | Crash: Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 83, in poll_loop
+    ).execute()
+      ^^^^^^^^^
+  File "/home/ubuntu/automation/automation-env/lib/python3.12/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/automation-env/lib/python3.12/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/197ed191ee2613bf/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+
+2025-07-09 03:18:13,163 | WARNING | Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-07-09 03:18:13,163 | ERROR | Could not send crash email: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/send?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-07-09 03:18:43,380 | WARNING | Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-07-09 03:18:43,380 | ERROR | Crash: Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai_agent.py", line 83, in poll_loop
+    ).execute()
+      ^^^^^^^^^
+  File "/home/ubuntu/automation/automation-env/lib/python3.12/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/automation-env/lib/python3.12/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/197ed191ee2613bf/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+
+2025-07-09 03:18:43,450 | WARNING | Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-07-09 03:18:43,450 | ERROR | Could not send crash email: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/send?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-07-09 03:19:06,391 | INFO | Keyboard interrupt – exiting.

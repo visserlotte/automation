@@ -1,0 +1,7 @@
+{
+  "steps": [
+    "pip: install requests",
+    "fetch: https://httpbin.org/robots.txt -> dl/robots.txt",
+    "py:\nfrom master_ai.runtime.summarize import summarize_url\nprint(summarize_url(\"https://httpbin.org/html\", 3))"
+  ]
+}

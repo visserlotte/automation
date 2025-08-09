@@ -1,0 +1,8 @@
+{"ts": "2025-08-09T00:07:14+0000", "kind": "run_started", "data": {"run_id": "20250809_000714", "goal": "fetch: url=https://httpbin.org/robots.txt; dest=dl/robots.txt", "safe": true}}
+{"ts": "2025-08-09T00:07:14+0000", "kind": "plan_ready", "data": {"steps": [{"op": "fetch", "desc": "download https://httpbin.org/robots.txt -> dl/robots.txt", "cmd": null, "path": null, "content": null, "before": null, "after": null, "code": null, "url": "https://httpbin.org/robots.txt", "dest": "dl/robots.txt", "repo": null}]}}
+{"ts": "2025-08-09T00:07:14+0000", "kind": "progress", "data": {"current": 0, "total": 1, "eta": null}}
+{"ts": "2025-08-09T00:07:14+0000", "kind": "thought", "data": {"text": "Step 1/1: download https://httpbin.org/robots.txt -> dl/robots.txt"}}
+{"ts": "2025-08-09T00:07:14+0000", "kind": "log", "data": {"step": 1, "line": "fetched -> dl/robots.txt"}}
+{"ts": "2025-08-09T00:07:14+0000", "kind": "action_done", "data": {"step": 1, "rc": 0, "seconds": 0.012, "log": null}}
+{"ts": "2025-08-09T00:07:14+0000", "kind": "progress", "data": {"current": 1, "total": 1, "eta": null}}
+{"ts": "2025-08-09T00:07:14+0000", "kind": "run_finished", "data": {"result": "OK"}}

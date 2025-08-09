@@ -1,0 +1,116 @@
+.
+├── .dockerignore
+├── .enable_self_editing.py.swp
+├── .env
+├── 25.2
+├── =
+├── CACHED
+├── Dockerfile
+├── ERROR
+├── Logs
+│   └── runtime.log
+├── README.md
+├── [internal]
+├── ai-agent.py
+├── ai_agent.py
+├── ai_helpers
+│   ├── __init__.py
+│   ├── ai_utils.py
+│   ├── chunk_and_process.py
+│   ├── cred_orchestrator.py
+│   ├── handle_mail.py
+│   ├── hello.sh
+│   ├── master_ai_config.py
+│   └── write_helper.py
+├── aws
+│   ├── README.md
+│   ├── THIRD_PARTY_LICENSES
+│   ├── dist
+│   └── install
+├── bootstrap_ai_brain.py
+├── chat_client.sh
+├── chat_interface.py
+├── config
+│   └── config.yaml
+├── core
+├── credentials.json
+├── creds
+│   └── token.pickle
+├── creds.txt
+├── exporting
+├── extracting
+├── global_memory
+│   └── skills.json
+├── global_modules
+├── gmail_api_oauth_setup.py
+├── gmail_api_test.py
+├── gmail_service.py
+├── gmail_test.py
+├── handler.py
+├── install_master_ai_upgrades.sh
+├── logs
+│   ├── ai_brain.log
+│   ├── ai_updates.log
+│   ├── automation.log
+│   ├── bootstrap.log
+│   ├── last_command.txt
+│   ├── self-edits.log
+│   ├── thoughts.log
+│   └── vivid_probe.log
+├── main.py
+├── master_ai.py
+├── master_ai.py.save
+├── modules
+│   ├── browsing.py
+│   ├── install_and_import.py
+│   └── self_edit.py
+├── naming
+├── patches
+├── pip_version.txt
+├── project_manager.py
+├── projects
+│   ├── default
+│   └── project1
+├── python_version.txt
+├── requirements.txt
+├── resolve
+├── resp.json
+├── response.json
+├── scraped_titles.log
+├── scripts
+│   ├── generate_gmail_creds.py
+│   └── gmail_auth.py
+├── secret.vault.gpg
+├── secret_store
+│   ├── msmtp.pass
+│   └── secret.vault.gpg
+├── self_patch.sh
+├── self_update.py
+├── sha256:020e547580a25092dd291ed8a9a7ff9cf0d75a2c765a977734a176
+├── sha256:05480f6c0a236faa6cfd691bf882032bf27e9924fce813ba9a
+├── sha256:2866816e2acaedd23a18c1262519263fd689d34b424cf69c38
+├── sha256:5042916cada035ee3e9b318a7bb3c84fdc64d5011d557df9a11477
+├── sha256:5632717bd05156b9dc65dc669c43f6abc364518f62a87463495b58f3cc
+├── sha256:9b561df83c4705f7298e2c2794ea2aa6736353e05a4d1dfd6204
+├── sha256:abc1d9f33ae1abe4980ad0819816af5ba341be7e2d5f751c812a3b
+├── sha256:adbe15c3b0448f43aa8c6fdbc92289cacdcac750ea0475f609b46e62c6
+├── sha256:c8b0a55813ef1876e0e602cf98a784db9dc36614109815cb2f80
+├── start_ai.sh
+├── tasks
+├── test_gmail_login.py
+├── test_gpt.py
+├── test_runs
+│   ├── first_test
+│   └── self_rebuild
+├── test_scrape.py
+├── tmp
+├── token.pickle
+├── tools
+│   └── security_scan.sh
+├── transferring
+├── update_env.sh
+├── vivid_probe.py
+├── watchdog.sh
+└── writing
+
+24 directories, 90 files

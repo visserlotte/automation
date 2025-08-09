@@ -1,0 +1,22 @@
+.venv/
+venv/
+**/__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+*.log
+Logs/
+logs/
+token.pickle
+*.zip
+*.ipynb
+automation-env/
+awscliv2.zip
+
+# Big local dirs that are NOT needed in the image
+projects/
+global_memory/
+global_modules/
+tmp/
+test_runs/

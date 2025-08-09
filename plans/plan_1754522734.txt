@@ -1,0 +1,6 @@
+1. 1. **Define Objectives and Scope:**
+2. 2. **Set Up Test Environment:**
+3. 3. **Develop Test Cases:**
+4. 4. **Execute Tests:**
+5. 5. **Analyze and Document Results:**
+6. 6. **Rectify Issues and Retest:**

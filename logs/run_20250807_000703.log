@@ -1,0 +1,14 @@
+..                                                                       [100%]
+2 passed in 0.88s
+[executor] wrote Watchdog.py
+[executor] running pytest …
+✅  Goal completed. Estimated runtime: ~5 min
+📨  Completion email queued.
+---
+Running goal: echo integration test
+---
+---
+Running goal: echo smoke test
+---
+..                                                                       [100%]
+..                                                                       [100%]

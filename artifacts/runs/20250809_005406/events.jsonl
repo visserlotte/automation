@@ -1,0 +1,685 @@
+{"ts": "2025-08-09T00:54:06+0000", "kind": "run_started", "data": {"run_id": "20250809_005406", "goal": "taskfile: path=tasks/build_httpie.json", "safe": true}}
+{"ts": "2025-08-09T00:54:06+0000", "kind": "plan_ready", "data": {"steps": [{"op": "git", "desc": "git clone https://github.com/httpie/httpie repo_httpie", "cmd": null, "path": null, "content": null, "before": null, "after": null, "code": null, "edits": null, "layout": null, "url": null, "dest": null, "args": ["clone", "https://github.com/httpie/httpie", "repo_httpie"], "repo": null, "retries": 2, "allow_fail": false, "timeout": null}, {"op": "exec", "desc": "run shell: python -m pip install -U pip wheel", "cmd": "python -m pip install -U pip wheel", "path": null, "content": null, "before": null, "after": null, "code": null, "edits": null, "layout": null, "url": null, "dest": null, "args": null, "repo": null, "retries": 1, "allow_fail": true, "timeout": null}, {"op": "exec", "desc": "run shell: pip install -e repo_httpie[dev]", "cmd": "pip install -e repo_httpie[dev]", "path": null, "content": null, "before": null, "after": null, "code": null, "edits": null, "layout": null, "url": null, "dest": null, "args": null, "repo": null, "retries": 1, "allow_fail": false, "timeout": null}, {"op": "exec", "desc": "run shell: pytest -q", "cmd": "pytest -q", "path": null, "content": null, "before": null, "after": null, "code": null, "edits": null, "layout": null, "url": null, "dest": null, "args": null, "repo": null, "retries": 1, "allow_fail": true, "timeout": null}]}}
+{"ts": "2025-08-09T00:54:06+0000", "kind": "progress", "data": {"current": 0, "total": 4, "eta": null}}
+{"ts": "2025-08-09T00:54:06+0000", "kind": "thought", "data": {"text": "Step 1/4: git clone https://github.com/httpie/httpie repo_httpie"}}
+{"ts": "2025-08-09T00:54:06+0000", "kind": "log", "data": {"step": 1, "line": "Cloning into 'repo_httpie'..."}}
+{"ts": "2025-08-09T00:54:07+0000", "kind": "action_done", "data": {"step": 1, "rc": 0, "seconds": 0.852, "log": "artifacts/runs/20250809_005406/logs/step_1.log"}}
+{"ts": "2025-08-09T00:54:07+0000", "kind": "progress", "data": {"current": 1, "total": 4, "eta": null}}
+{"ts": "2025-08-09T00:54:07+0000", "kind": "thought", "data": {"text": "Step 2/4: run shell: python -m pip install -U pip wheel"}}
+{"ts": "2025-08-09T00:54:07+0000", "kind": "log", "data": {"step": 2, "line": "Requirement already satisfied: pip in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (25.2)"}}
+{"ts": "2025-08-09T00:54:07+0000", "kind": "log", "data": {"step": 2, "line": "Requirement already satisfied: wheel in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (0.45.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "action_done", "data": {"step": 2, "rc": 0, "seconds": 0.904, "log": "artifacts/runs/20250809_005406/logs/step_2.log"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "progress", "data": {"current": 2, "total": 4, "eta": null}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "thought", "data": {"text": "Step 3/4: run shell: pip install -e repo_httpie[dev]"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Obtaining file:///home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "  Preparing metadata (setup.py): started"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "  Preparing metadata (setup.py): finished with status 'done'"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pip in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (25.2)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: charset_normalizer>=2.0.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (3.4.2)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: defusedxml>=0.6.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (0.7.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: requests>=2.22.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from requests[socks]>=2.22.0->httpie==3.2.4) (2.32.4)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: Pygments>=2.5.2 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (2.19.2)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: requests-toolbelt>=0.9.1 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (1.0.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: multidict>=4.7.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (6.6.3)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: setuptools in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (80.9.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: rich>=9.10.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (13.9.4)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pytest in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (8.2.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pytest-httpbin>=0.0.6 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (2.1.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: responses in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (0.25.8)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pytest-mock in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (3.14.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: werkzeug<2.1.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (2.0.3)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: flake8 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (7.3.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: flake8-comprehensions in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (3.16.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: flake8-deprecated in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (2.2.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: flake8-mutable in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (1.2.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: flake8-tuple in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (0.4.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pyopenssl in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (25.1.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pytest-cov in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (6.2.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pyyaml in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (6.0.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: twine in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (6.1.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: wheel in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (0.45.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: Jinja2 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpie==3.2.4) (3.1.6)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: httpbin in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from pytest-httpbin>=0.0.6->httpie==3.2.4) (0.10.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: idna<4,>=2.5 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from requests>=2.22.0->requests[socks]>=2.22.0->httpie==3.2.4) (3.10)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: urllib3<3,>=1.21.1 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from requests>=2.22.0->requests[socks]>=2.22.0->httpie==3.2.4) (2.5.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: certifi>=2017.4.17 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from requests>=2.22.0->requests[socks]>=2.22.0->httpie==3.2.4) (2025.8.3)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: PySocks!=1.5.7,>=1.5.6 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from requests[socks]>=2.22.0->httpie==3.2.4) (1.7.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: markdown-it-py>=2.2.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from rich>=9.10.0->httpie==3.2.4) (3.0.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: mdurl~=0.1 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=9.10.0->httpie==3.2.4) (0.1.2)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from flake8->httpie==3.2.4) (0.7.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pycodestyle<2.15.0,>=2.14.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from flake8->httpie==3.2.4) (2.14.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pyflakes<3.5.0,>=3.4.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from flake8->httpie==3.2.4) (3.4.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: six in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from flake8-tuple->httpie==3.2.4) (1.17.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: Flask in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (2.1.3)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: brotlicffi in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (1.1.0.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: decorator in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (5.2.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: flasgger in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (0.9.7.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: greenlet>=3.0.0a1 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (3.2.4)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: cffi>=1.0.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from brotlicffi->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (1.17.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pycparser in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from cffi>=1.0.0->brotlicffi->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (2.22)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: jsonschema>=3.0.1 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (4.25.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: mistune in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (3.1.3)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: packaging in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (24.2)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: itsdangerous>=2.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from Flask->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (2.2.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: click>=8.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from Flask->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (8.2.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: MarkupSafe>=2.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from Jinja2->httpie==3.2.4) (3.0.2)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: attrs>=22.2.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from jsonschema>=3.0.1->flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (25.3.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from jsonschema>=3.0.1->flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (2025.4.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: referencing>=0.28.4 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from jsonschema>=3.0.1->flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (0.36.2)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: rpds-py>=0.7.1 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from jsonschema>=3.0.1->flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (0.26.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: typing-extensions>=4.4.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from referencing>=0.28.4->jsonschema>=3.0.1->flasgger->httpbin->pytest-httpbin>=0.0.6->httpie==3.2.4) (4.14.1)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: cryptography<46,>=41.0.5 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from pyopenssl->httpie==3.2.4) (45.0.6)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: iniconfig in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from pytest->httpie==3.2.4) (2.1.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: pluggy<2.0,>=1.5 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from pytest->httpie==3.2.4) (1.6.0)"}}
+{"ts": "2025-08-09T00:54:08+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: coverage>=7.5 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from coverage[toml]>=7.5->pytest-cov->httpie==3.2.4) (7.10.2)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: readme-renderer>=35.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from twine->httpie==3.2.4) (44.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: keyring>=15.1 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from twine->httpie==3.2.4) (25.6.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: rfc3986>=1.4.0 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from twine->httpie==3.2.4) (2.0.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: id in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from twine->httpie==3.2.4) (1.5.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: SecretStorage>=3.2 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from keyring>=15.1->twine->httpie==3.2.4) (3.3.3)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: jeepney>=0.4.2 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from keyring>=15.1->twine->httpie==3.2.4) (0.9.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: jaraco.classes in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from keyring>=15.1->twine->httpie==3.2.4) (3.4.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: jaraco.functools in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from keyring>=15.1->twine->httpie==3.2.4) (4.2.1)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: jaraco.context in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from keyring>=15.1->twine->httpie==3.2.4) (6.0.1)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: nh3>=0.2.14 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from readme-renderer>=35.0->twine->httpie==3.2.4) (0.3.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: docutils>=0.21.2 in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from readme-renderer>=35.0->twine->httpie==3.2.4) (0.22)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Requirement already satisfied: more-itertools in /home/ubuntu/automation/.venv/lib/python3.12/site-packages (from jaraco.classes->keyring>=15.1->twine->httpie==3.2.4) (10.7.0)"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "Installing collected packages: httpie"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "  Attempting uninstall: httpie"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "    Found existing installation: httpie 3.2.4"}}
+{"ts": "2025-08-09T00:54:09+0000", "kind": "log", "data": {"step": 3, "line": "    Uninstalling httpie-3.2.4:"}}
+{"ts": "2025-08-09T00:54:11+0000", "kind": "log", "data": {"step": 3, "line": "      Successfully uninstalled httpie-3.2.4"}}
+{"ts": "2025-08-09T00:54:11+0000", "kind": "log", "data": {"step": 3, "line": "  DEPRECATION: Legacy editable install of httpie[dev]==3.2.4 from file:///home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie (setup.py develop) is deprecated. pip 25.3 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457"}}
+{"ts": "2025-08-09T00:54:11+0000", "kind": "log", "data": {"step": 3, "line": "  Running setup.py develop for httpie"}}
+{"ts": "2025-08-09T00:54:14+0000", "kind": "log", "data": {"step": 3, "line": "Successfully installed httpie-3.2.4"}}
+{"ts": "2025-08-09T00:54:14+0000", "kind": "action_done", "data": {"step": 3, "rc": 0, "seconds": 6.283, "log": "artifacts/runs/20250809_005406/logs/step_3.log"}}
+{"ts": "2025-08-09T00:54:14+0000", "kind": "progress", "data": {"current": 3, "total": 4, "eta": null}}
+{"ts": "2025-08-09T00:54:14+0000", "kind": "thought", "data": {"text": "Step 4/4: run shell: pytest -q"}}
+{"ts": "2025-08-09T00:54:24+0000", "kind": "log", "data": {"step": 4, "line": "......................................s................................. [  7%]"}}
+{"ts": "2025-08-09T00:54:30+0000", "kind": "log", "data": {"step": 4, "line": "......................s..............................127.0.0.1 - - [09/Aug/2025 00:54:30] \"POST /post HTTP/1.1\" 200 2002"}}
+{"ts": "2025-08-09T00:54:31+0000", "kind": "log", "data": {"step": 4, "line": "...127.0.0.1 - - [09/Aug/2025 00:54:31] \"POST /post HTTP/1.1\" 200 2042"}}
+{"ts": "2025-08-09T00:54:31+0000", "kind": "log", "data": {"step": 4, "line": "................ [ 14%]"}}
+{"ts": "2025-08-09T00:54:37+0000", "kind": "log", "data": {"step": 4, "line": ".........................................s.............................. [ 21%]"}}
+{"ts": "2025-08-09T00:54:41+0000", "kind": "log", "data": {"step": 4, "line": "..............................................F......................... [ 28%]"}}
+{"ts": "2025-08-09T00:54:46+0000", "kind": "log", "data": {"step": 4, "line": ".......F................................................................ [ 35%]"}}
+{"ts": "2025-08-09T00:54:51+0000", "kind": "log", "data": {"step": 4, "line": "........................................................................ [ 42%]"}}
+{"ts": "2025-08-09T00:54:57+0000", "kind": "log", "data": {"step": 4, "line": "........................................................................ [ 49%]"}}
+{"ts": "2025-08-09T00:55:01+0000", "kind": "log", "data": {"step": 4, "line": "........................................................................ [ 56%]"}}
+{"ts": "2025-08-09T00:55:05+0000", "kind": "log", "data": {"step": 4, "line": "........................................................................ [ 63%]"}}
+{"ts": "2025-08-09T00:55:12+0000", "kind": "log", "data": {"step": 4, "line": ".......................................xxx.............................. [ 70%]"}}
+{"ts": "2025-08-09T00:55:28+0000", "kind": "log", "data": {"step": 4, "line": "........................................................................ [ 77%]"}}
+{"ts": "2025-08-09T00:55:54+0000", "kind": "log", "data": {"step": 4, "line": ".......................s....x........................................... [ 84%]"}}
+{"ts": "2025-08-09T00:55:57+0000", "kind": "log", "data": {"step": 4, "line": "...................................pytest-httpbin server hit an exception serving request: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)"}}
+{"ts": "2025-08-09T00:55:57+0000", "kind": "log", "data": {"step": 4, "line": "attempting to ignore so the rest of the tests can run"}}
+{"ts": "2025-08-09T00:55:57+0000", "kind": "log", "data": {"step": 4, "line": ".pytest-httpbin server hit an exception serving request: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)"}}
+{"ts": "2025-08-09T00:55:57+0000", "kind": "log", "data": {"step": 4, "line": "attempting to ignore so the rest of the tests can run"}}
+{"ts": "2025-08-09T00:55:58+0000", "kind": "log", "data": {"step": 4, "line": "..............pytest-httpbin server hit an exception serving request: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)"}}
+{"ts": "2025-08-09T00:55:58+0000", "kind": "log", "data": {"step": 4, "line": "attempting to ignore so the rest of the tests can run"}}
+{"ts": "2025-08-09T00:56:01+0000", "kind": "log", "data": {"step": 4, "line": "...................... [ 91%]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ".....................................................s.................. [ 98%]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "....................                                                     [100%]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "=================================== FAILURES ==================================="}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "_ test_terminal_output_response_charset_detection[big5-\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996] _"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "text = '卷首卷首卷首卷首卷卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首', charset = 'big5'"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.parametrize('charset, text', CHARSET_TEXT_PAIRS)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @responses.activate"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    def test_terminal_output_response_charset_detection(text, charset):"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "        responses.add("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            method=responses.POST,"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            url=DUMMY_URL,"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            body=text.encode(charset),"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            content_type='text/plain',"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "        )"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "        r = http('--form', 'POST', DUMMY_URL)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ">       assert text in r"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "E       AssertionError: assert '卷首卷首卷首卷首卷卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首' in 'HTTP/1.1 200 OK\\r\\nContent-Type: text/plain\\r\\n\\r\\n뻥솤뻥솤뻥솤뻥솤뻥뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤\\n\\n'"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_encoding.py:147: AssertionError"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "_ test_terminal_output_request_charset_detection[big5-\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996] _"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "charset = 'big5', text = '卷首卷首卷首卷首卷卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首'"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.parametrize('charset, text', CHARSET_TEXT_PAIRS)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    def test_terminal_output_request_charset_detection(charset, text):"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "        r = http("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            '--offline',"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            DUMMY_URL,"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            'Content-Type: text/plain',"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            env=MockEnvironment("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "                stdin=text.encode(charset),"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "                stdin_isatty=False,"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "            ),"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "        )"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ">       assert text in r"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "E       AssertionError: assert '卷首卷首卷首卷首卷卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首卷首' in 'POST / HTTP/1.1\\r\\nAccept: application/json, */*;q=0.5\\r\\nAccept-Encoding: gzip, deflate, br\\r\\nConnection: keep-aliv...xt/plain\\r\\nHost: this-should.never-resolve\\r\\nUser-Agent: HTTPie/3.2.4\\r\\n\\r\\n뻥솤뻥솤뻥솤뻥솤뻥뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤뻥솤\\n\\n'"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_encoding.py:222: AssertionError"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "=============================== warnings summary ==============================="}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_httpie_cli.py:14"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie_cli.py:14: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_httpie_cli.py:32"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie_cli.py:32: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_httpie_cli.py:52"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie_cli.py:52: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:7"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:18"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:18: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:31"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:31: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:42"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:42: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:54"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:54: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:62"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:62: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:71"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:71: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:85"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:85: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:94"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:94: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:106"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:106: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:122"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:122: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_plugins_cli.py:135"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_plugins_cli.py:135: PytestUnknownMarkWarning: Unknown pytest.mark.requires_installation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_installation"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_update_warnings.py:33"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_update_warnings.py:33: PytestUnknownMarkWarning: Unknown pytest.mark.requires_external_processes - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_external_processes"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_uploads.py:126"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py:126: PytestUnknownMarkWarning: Unknown pytest.mark.requires_external_processes - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_external_processes"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_uploads.py:144"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py:144: PytestUnknownMarkWarning: Unknown pytest.mark.requires_external_processes - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_external_processes"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_uploads.py:160"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py:160: PytestUnknownMarkWarning: Unknown pytest.mark.requires_external_processes - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_external_processes"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "repo_httpie/tests/test_uploads.py:176"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py:176: PytestUnknownMarkWarning: Unknown pytest.mark.requires_external_processes - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    @pytest.mark.requires_external_processes"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_downloads.py::TestDownloads::test_actual_download[http]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /usr/lib/python3.12/typing.py:1246: ResourceWarning: unclosed file <_io.BufferedReader name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test.txt'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.__args__ = tuple(... if a is _TypingEllipsis else"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie.py::test_headers_unset[http]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /usr/lib/python3.12/collections/__init__.py:449: ResourceWarning: unclosed file <_io.FileIO name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test.txt' mode='rb' closefd=True>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    result = tuple_new(cls, iterable)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_downloads.py: 1 warning"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie.py: 2 warnings"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_offline.py: 1 warning"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py: 1 warning"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py: 5 warnings"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_windows.py: 1 warning"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:159: ResourceWarning: unclosed file <_io.BufferedReader name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test.txt'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.args, no_options = super().parse_known_args(args, namespace)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_binary.py::TestBinaryResponseData::test_binary_suppresses_when_terminal"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:159: ResourceWarning: unclosed file <_io.BufferedReader name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test.bin'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.args, no_options = super().parse_known_args(args, namespace)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_cli.py::TestSchemes::test_scheme_when_invoked_as_https"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /usr/lib/python3.12/collections/__init__.py:449: ResourceWarning: unclosed file <_io.BufferedReader name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test.bin'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    result = tuple_new(cls, iterable)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_cookie.py::TestIntegration::test_cookie_parser"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/test_cookie.py:19: DeprecationWarning: setDaemon() is deprecated, set the daemon attribute instead"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.mock_server_thread.setDaemon(True)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_cookie_on_redirects.py::test_server_set_cookie_on_redirect_different_domain[True]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 34309)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_cookie_on_redirects.py::test_server_set_cookie_on_redirect_different_domain[False]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 37253)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_downloads.py::TestDownloads::test_download_with_redirect_original_url_used_for_filename"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/core.py:100: ResourceWarning: unclosed file <_io.FileIO name='1.json' mode='ab+' closefd=True>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    exit_status = main_program("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_encoding.py::test_unicode_headers_verbose"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /usr/lib/python3.12/collections/__init__.py:458: ResourceWarning: unclosed file <_io.FileIO name='/tmp/httpie_stderre03a22_a' mode='rb+' closefd=True>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    result = self._make(_map(kwds.pop, field_names, self))"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_encoding.py: 12 warnings"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_stream.py: 8 warnings"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/responses/__init__.py:609: DeprecationWarning: stream argument is deprecated. Use stream parameter in request directly"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    warn("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie.py::test_response_headers_multiple"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 45889)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie.py::test_response_headers_multiple_repeated"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 35839)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie.py::test_response_headers_multiple_representation[format]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 32905)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_httpie.py::test_response_headers_multiple_representation[none]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 41961)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_json.py::test_duplicate_keys_support_from_input_file"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_json.py::test_simple_json_arguments_with_non_json[1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:159: ResourceWarning: unclosed file <_io.BufferedReader name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test_with_dupe_keys.json'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.args, no_options = super().parse_known_args(args, namespace)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet[quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-b-quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=26 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet[quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_quiet_with_check_status_non_zero_pipe"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_password_prompt[quiet_flags0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_password_prompt[quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-b-quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-v-quiet_flags0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-p=hH-quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=30 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet[quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_check_status_non_zero_pipe"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-v-quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-v-quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[True-quiet_flags0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=31 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_check_status_non_zero"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-b-quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-v-quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=29 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_quiet_with_check_status_non_zero"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_double_quiet_on_error"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_password_prompt[quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-h-quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=32 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_password_prompt[quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-p=hH-quiet_flags0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-p=hH-quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[True-quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[False-quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=33 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-h-quiet_flags0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-h-quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-p=hH-quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[True-quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=34 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-h-quiet_flags3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[True-quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[False-quiet_flags0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=35 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_explicit_output_options[-b-quiet_flags0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=16 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[False-quiet_flags1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestVerboseFlag::test_verbose"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=36 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::TestQuietFlag::test_quiet_with_output_redirection[False-quiet_flags2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/cli/argparser.py:157: ResourceWarning: unclosed file <_io.TextIOWrapper name=37 mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    self.env = env"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[-auto]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 41099)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[-pie]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 44503)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[-pie-dark]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 39605)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[-pie-light]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 43551)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[-solarized]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 43801)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ -auto]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 45987)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ -pie]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 37775)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ -pie-dark]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 38243)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ -pie-light]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 33159)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ -solarized]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 41677)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK-auto]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 42551)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK-pie]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 36753)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK-pie-dark]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 40851)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK-pie-light]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 36945)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK-solarized]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 33399)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK -auto]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 44703)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK -pie]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 42491)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK -pie-dark]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 45381)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK -pie-light]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 38947)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ OK -solarized]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 42095)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ CUSTOM -auto]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 44149)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ CUSTOM -pie]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 42079)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ CUSTOM -pie-dark]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 33789)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ CUSTOM -pie-light]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 42647)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_output.py::test_ensure_status_code_is_shown_on_all_themes[ CUSTOM -solarized]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=14, family=2, type=1, proto=0, laddr=('127.0.0.1', 34965)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py::TestSessionFlow::test_session_update"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py::TestSessionFlow::test_session_update"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py::TestSessionFlow::test_session_update"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py::TestSessionFlow::test_session_update"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py::TestMultipartFormDataFileUpload::test_upload_custom_content_type"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py::TestMultipartFormDataFileUpload::test_multipart"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_xml.py::test_valid_xml[file2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_xml.py::test_valid_xml[file2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /usr/lib/python3.12/collections/__init__.py:458: ResourceWarning: unclosed file <_io.BufferedReader name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test.txt'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    result = self._make(_map(kwds.pop, field_names, self))"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py::TestSession::test_download_in_session"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/core.py:100: ResourceWarning: unclosed file <_io.FileIO name='get.json' mode='ab+' closefd=True>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    exit_status = main_program("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py::TestSession::test_auth_type_reused_in_session[False-False]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /usr/lib/python3.12/collections/__init__.py:449: ResourceWarning: unclosed file <_io.FileIO name='/tmp/httpie_stderrx4aq1kmt' mode='rb+' closefd=True>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    result = tuple_new(cls, iterable)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_sessions.py::test_secure_cookies_on_localhost[localhost_http_server-expected_cookies0]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=28, family=2, type=1, proto=0, laddr=('127.0.0.1', 33507)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::test_ssl_version[tls1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::test_ssl_version[tls1.1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::test_ssl_version[tls1.2]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/ssl_.py:76: DeprecationWarning: 'ssl_version' option is deprecated and will be removed in urllib3 v2.6.0. Instead use 'ssl_minimum_version'"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    ssl_context = create_urllib3_context("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::test_ssl_version[tls1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/urllib3/util/ssl_.py:301: DeprecationWarning: ssl.TLSVersion.TLSv1 is deprecated"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    context.minimum_version = ssl_minimum_version"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::test_ssl_version[tls1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/urllib3/util/ssl_.py:306: DeprecationWarning: ssl.TLSVersion.TLSv1 is deprecated"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    context.maximum_version = ssl_maximum_version"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::test_ssl_version[tls1.1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/urllib3/util/ssl_.py:301: DeprecationWarning: ssl.TLSVersion.TLSv1_1 is deprecated"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    context.minimum_version = ssl_minimum_version"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::test_ssl_version[tls1.1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/urllib3/util/ssl_.py:306: DeprecationWarning: ssl.TLSVersion.TLSv1_1 is deprecated"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    context.maximum_version = ssl_maximum_version"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::TestServerCert::test_verify_no_OK"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::TestServerCert::test_verify_false_OK[false]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_ssl.py::TestServerCert::test_verify_false_OK[fALse]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '127.0.0.1'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    warnings.warn("}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_stream.py::test_auto_streaming[extras0-3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=26, family=2, type=1, proto=0, laddr=('127.0.0.1', 41387)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_stream.py::test_auto_streaming[extras1-3]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=26, family=2, type=1, proto=0, laddr=('127.0.0.1', 41083)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_stream.py::test_auto_streaming[extras2-1]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=26, family=2, type=1, proto=0, laddr=('127.0.0.1', 43547)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_stream.py::test_streaming_encoding_detection"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/.venv/lib/python3.12/site-packages/_pytest/fixtures.py:893: ResourceWarning: unclosed <socket.socket fd=26, family=2, type=1, proto=0, laddr=('127.0.0.1', 43067)>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    next(it)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_update_warnings.py::test_daemon_runner"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/httpie/internal/daemons.py:67: DeprecationWarning: This process (pid=178838) is multi-threaded, use of fork() may lead to deadlocks in the child."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    pid = os.fork()"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "artifacts/runs/20250809_005406/repo_httpie/tests/test_uploads.py::TestRequestBodyFromFilePath::test_request_body_from_file_by_path_with_explicit_content_type"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  /usr/lib/python3.12/collections/__init__.py:458: ResourceWarning: unclosed file <_io.FileIO name='/home/ubuntu/automation/artifacts/runs/20250809_005406/repo_httpie/tests/fixtures/test.txt' mode='rb' closefd=True>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "    result = self._make(_map(kwds.pop, field_names, self))"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  Enable tracemalloc to get traceback where the object was allocated."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info."}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": ""}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "=========================== short test summary info ============================"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "FAILED repo_httpie/tests/test_encoding.py::test_terminal_output_response_charset_detection[big5-\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "FAILED repo_httpie/tests/test_encoding.py::test_terminal_output_request_charset_detection[big5-\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996\\u5377\\u9996]"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "2 failed, 1017 passed, 5 skipped, 4 xfailed, 155 warnings in 116.76s (0:01:56)"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/httpie_stderr6u71nnkg' mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "ResourceWarning: Enable tracemalloc to get the object allocation traceback"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/httpie_stderrvq3hpwg7' mode='w+t' encoding='utf-8'>"}}
+{"ts": "2025-08-09T00:56:11+0000", "kind": "log", "data": {"step": 4, "line": "ResourceWarning: Enable tracemalloc to get the object allocation traceback"}}
+{"ts": "2025-08-09T00:56:12+0000", "kind": "action_done", "data": {"step": 4, "rc": 1, "seconds": 117.804, "log": "artifacts/runs/20250809_005406/logs/step_4.log"}}
+{"ts": "2025-08-09T00:56:12+0000", "kind": "progress", "data": {"current": 4, "total": 4, "eta": null}}
+{"ts": "2025-08-09T00:56:12+0000", "kind": "run_finished", "data": {"result": "OK"}}

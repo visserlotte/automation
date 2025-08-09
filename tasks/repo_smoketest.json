@@ -1,0 +1,7 @@
+{
+  "steps": [
+    "pip: install wheel setuptools pytest",
+    "git: clone https://github.com/httpie/httpie -> repo_httpie",
+    "run: bash -lc 'cd repo_httpie && pip install -e . && pytest -q || true'"
+  ]
+}

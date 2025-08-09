@@ -1,0 +1,101 @@
+import os, subprocess, time, shlex
+from pathlib import Path
+import streamlit as st
+
+st.set_page_config(page_title="Master-AI Studio", layout="wide")
+
+ROOT = Path.cwd()
+RUNS_ROOT = ROOT / "artifacts" / "runs"
+RUNS_ROOT.mkdir(parents=True, exist_ok=True)
+
+ALLOWLIST = {"python","pytest","pip","ruff","mypy","git","ls","cat","echo","mkdir","bash","sh"}
+
+def parse_env(text: str) -> dict[str, str]:
+    env: dict[str, str] = {}
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        env[k.strip()] = v.strip()
+    return env
+
+def run_stream(cmd: str, cwd: Path, env_add: dict[str, str], safe_mode: bool) -> subprocess.Popen:
+    env = os.environ.copy()
+    env.update(env_add)
+    if safe_mode:
+        parts = shlex.split(cmd, posix=True)
+        if not parts:
+            raise RuntimeError("Empty command")
+        head = parts[0].rsplit("/", 1)[-1]
+        if head not in ALLOWLIST:
+            raise RuntimeError(f"Command not allowed in Safe mode: {head!r}")
+        return subprocess.Popen(parts, cwd=str(cwd),
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                text=True, bufsize=1, env=env)
+    return subprocess.Popen(cmd, cwd=str(cwd), shell=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                            text=True, bufsize=1, env=env, executable="/bin/bash")
+
+st.title("🧠 Master-AI Studio")
+
+# Sidebar
+with st.sidebar:
+    st.markdown("### Working directory")
+    run_id = time.strftime("%Y%m%d_%H%M%S")
+    use_sandbox = st.toggle("Use new sandbox under artifacts/runs/", value=True)
+    if use_sandbox:
+        workdir = RUNS_ROOT / run_id / "sandbox"
+        logs_dir = workdir.parent / "logs"
+        workdir.mkdir(parents=True, exist_ok=True)
+        logs_dir.mkdir(parents=True, exist_ok=True)
+    else:
+        workdir = ROOT
+        logs_dir = RUNS_ROOT / "shared-logs"
+        logs_dir.mkdir(parents=True, exist_ok=True)
+
+    st.markdown("### Safety")
+    safe_mode = st.toggle("Safe mode (allowlisted commands only)", value=False)
+
+    st.markdown("### Quick actions")
+    if st.button("Plan (hello world)"):
+        st.session_state["cmd"] = "python -m master_ai plan --goal 'hello world CLI'"
+    if st.button("Run goal (say hello)"):
+        st.session_state["cmd"] = "python -m master_ai run-goal --goal 'say hello'"
+    if st.button("Self-check"):
+        st.session_state["cmd"] = "python -m master_ai self-check"
+
+# Main
+cmd = st.text_input("Command", value=st.session_state.get("cmd", "python -m master_ai --help"), key="cmd")
+env_text = st.text_area("Extra environment (KEY=VALUE per line)", value="", height=120)
+
+col_run, col_clear = st.columns([1,1])
+run_clicked = col_run.button("▶ Run", type="primary")
+clear_clicked = col_clear.button("Clear output")
+if clear_clicked:
+    st.session_state.pop("history", None)
+
+logbox = st.empty()
+
+if run_clicked and cmd.strip():
+    extra_env = parse_env(env_text)
+    try:
+        proc = run_stream(cmd.strip(), workdir, extra_env, safe_mode)
+    except Exception as e:
+        st.error(str(e))
+    else:
+        buf = []
+        for line in proc.stdout:  # live stream
+            buf.append(line.rstrip("\n"))
+            logbox.code("\n".join(buf), language="bash")
+        rc = proc.wait()
+        ts = time.strftime("%Y%m%d_%H%M%S")
+        log_path = (logs_dir / f"run_{ts}.log")
+        log_path.write_text("\n".join(buf) + f"\n\n# exit code: {rc}\n")
+        st.success(f"Done (exit={rc}). Log: {log_path}")
+        hist = st.session_state.setdefault("history", [])
+        hist.append({"time": ts, "cwd": str(workdir), "cmd": cmd, "rc": rc, "log": str(log_path)})
+
+st.markdown("### History")
+for item in st.session_state.get("history", [])[-10:][::-1]:
+    st.text(f"[{item['time']}] ({item['cwd']}) {item['cmd']}  → rc={item['rc']}  log={item['log']}")

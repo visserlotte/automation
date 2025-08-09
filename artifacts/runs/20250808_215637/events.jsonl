@@ -1,0 +1,16 @@
+{"ts": "2025-08-08T21:56:37", "kind": "run_started", "data": {"run_id": "20250808_215637", "goal": "run: echo hi", "safe": true}}
+{"ts": "2025-08-08T21:56:37", "kind": "plan_ready", "data": {"steps": [{"op": "exec", "desc": "run shell: echo hi"}]}}
+{"ts": "2025-08-08T21:56:37", "kind": "progress", "data": {"current": 0, "total": 1, "eta": null}}
+{"ts": "2025-08-08T21:56:37", "kind": "thought", "data": {"text": "Step 1/1: run shell: echo hi"}}
+{"ts": "2025-08-08T21:56:37", "kind": "log", "data": {"step": 1, "line": "hi"}}
+{"ts": "2025-08-08T21:56:37", "kind": "action_done", "data": {"step": 1, "rc": 0, "seconds": 0.0, "log": "/home/ubuntu/automation/artifacts/runs/20250808_215637/logs/step_1.log"}}
+{"ts": "2025-08-08T21:56:37", "kind": "progress", "data": {"current": 1, "total": 1, "eta": null}}
+{"ts": "2025-08-08T21:56:37", "kind": "run_finished", "data": {"result": "OK"}}
+{"ts": "2025-08-08T21:56:37", "kind": "run_started", "data": {"run_id": "20250808_215637", "goal": "run: echo hi from unsafe", "safe": false}}
+{"ts": "2025-08-08T21:56:37", "kind": "plan_ready", "data": {"steps": [{"op": "exec", "desc": "run shell: echo hi from unsafe"}]}}
+{"ts": "2025-08-08T21:56:37", "kind": "progress", "data": {"current": 0, "total": 1, "eta": null}}
+{"ts": "2025-08-08T21:56:37", "kind": "thought", "data": {"text": "Step 1/1: run shell: echo hi from unsafe"}}
+{"ts": "2025-08-08T21:56:37", "kind": "log", "data": {"step": 1, "line": "hi from unsafe"}}
+{"ts": "2025-08-08T21:56:37", "kind": "action_done", "data": {"step": 1, "rc": 0, "seconds": 0.0, "log": "/home/ubuntu/automation/artifacts/runs/20250808_215637/logs/step_1.log"}}
+{"ts": "2025-08-08T21:56:37", "kind": "progress", "data": {"current": 1, "total": 1, "eta": null}}
+{"ts": "2025-08-08T21:56:37", "kind": "run_finished", "data": {"result": "OK"}}

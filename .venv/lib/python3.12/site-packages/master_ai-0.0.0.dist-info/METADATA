@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: master-ai
+Version: 0.0.0
+Summary: Local automation/agent runtime
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown

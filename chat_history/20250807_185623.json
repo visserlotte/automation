@@ -1,0 +1,22 @@
+[
+  {
+    "id": "0499724c-7708-491d-9d0b-53f882878126",
+    "role": "user",
+    "content": "Hello"
+  },
+  {
+    "id": "2dc2ec19-e056-454f-aeb9-e9e9d87341d6",
+    "role": "assistant",
+    "content": "Hello! How can I assist you today? If there's anything specific you need help with, feel free to let me know."
+  },
+  {
+    "id": "965f8c8b-dab9-4bce-9948-79ceb438b498",
+    "role": "user",
+    "content": "##status##"
+  },
+  {
+    "id": "7e4cdbd2-dc36-4c94-b283-b044283216f2",
+    "role": "assistant",
+    "content": "Latest micro-project: plan_1754592956.txt (edited 2025-08-07 18:56:03)"
+  }
+]

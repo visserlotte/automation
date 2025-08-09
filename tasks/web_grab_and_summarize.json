@@ -1,0 +1,7 @@
+{
+  "steps": [
+    {"goal": "fetch: https://httpbin.org/robots.txt -> dl/robots.txt", "retries": 2},
+    {"goal": "py:\nfrom master_ai.runtime.summarize import summarize_url\nprint(summarize_url(\"https://httpbin.org/html\", 3))",
+     "retries": 1}
+  ]
+}

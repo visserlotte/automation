@@ -1,0 +1,12 @@
+[
+  {
+    "id": "6082a1a3-fd35-4ee3-9e0f-50f83c9b6ac0",
+    "role": "user",
+    "content": "/run echo integration test"
+  },
+  {
+    "id": "597e3a41-d4a8-4b8d-8792-5ae1f7b20d61",
+    "role": "assistant",
+    "content": "\ud83d\udee0\ufe0f  Running goal: echo integration test"
+  }
+]

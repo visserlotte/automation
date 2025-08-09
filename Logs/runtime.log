@@ -1,0 +1,36 @@
+2025-07-09 01:31:10,893 ERROR: loop crash: 'parts'
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 192, in main
+    body = base64.urlsafe_b64decode(meta['payload']['parts'][0]['body']['data']).decode(errors='ignore')
+                                    ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'parts'
+2025-07-09 01:32:11,495 ERROR: loop crash: 'parts'
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 192, in main
+    body = base64.urlsafe_b64decode(meta['payload']['parts'][0]['body']['data']).decode(errors='ignore')
+                                    ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'parts'
+2025-07-09 01:33:11,886 ERROR: loop crash: 'parts'
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 192, in main
+    body = base64.urlsafe_b64decode(meta['payload']['parts'][0]['body']['data']).decode(errors='ignore')
+                                    ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'parts'
+2025-07-09 01:34:12,279 ERROR: loop crash: 'parts'
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 192, in main
+    body = base64.urlsafe_b64decode(meta['payload']['parts'][0]['body']['data']).decode(errors='ignore')
+                                    ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'parts'
+2025-07-09 01:35:12,694 ERROR: loop crash: 'parts'
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 192, in main
+    body = base64.urlsafe_b64decode(meta['payload']['parts'][0]['body']['data']).decode(errors='ignore')
+                                    ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'parts'
+2025-07-09 01:36:13,073 ERROR: loop crash: 'parts'
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 192, in main
+    body = base64.urlsafe_b64decode(meta['payload']['parts'][0]['body']['data']).decode(errors='ignore')
+                                    ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'parts'

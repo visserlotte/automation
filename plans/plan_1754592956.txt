@@ -1,0 +1,5 @@
+1. 1. **Open a Terminal or Command Line Interface (CLI):**
+2. 2. **Navigate to the Desired Directory (if necessary):**
+3. 3. **Execute the Echo Command:**
+4. 4. **Verify the Output:**
+5. 5. **Log and Close the Terminal (if necessary):**

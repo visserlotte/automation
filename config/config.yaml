@@ -1,0 +1,18 @@
+email:
+  sender: "anonrecover@protonmail.com"
+  smtp_server: "smtp.protonmail.com"
+  port: 587
+  username: "anonrecover@protonmail.com"
+  password: "changeme"
+
+aws:
+  bucket_name: "your-s3-bucket"
+  region: "us-east-1"
+
+filters:
+  profit_threshold: 0.436
+  min_profit: 30
+  target_sites:
+    - stubhub
+    - parkwhiz
+    - vividseats

@@ -1,0 +1,24 @@
+
+==== unhandled @ Wed Jul  9 01:57:16 2025 ====
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 114, in <module>
+    main_loop()
+  File "/home/ubuntu/automation/ai-agent.py", line 97, in main_loop
+    service = gmail_service()       # may raise; handled by outer try/except
+              ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai-agent.py", line 42, in gmail_service
+    creds = Credentials.from_authorized_user_pickle(token, ["https://www.googleapis.com/auth/gmail.modify"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Credentials' has no attribute 'from_authorized_user_pickle'. Did you mean: 'from_authorized_user_file'?
+
+==== unhandled @ Wed Jul  9 02:25:44 2025 ====
+Traceback (most recent call last):
+  File "/home/ubuntu/automation/ai-agent.py", line 114, in <module>
+    main_loop()
+  File "/home/ubuntu/automation/ai-agent.py", line 97, in main_loop
+    service = gmail_service()       # may raise; handled by outer try/except
+              ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/automation/ai-agent.py", line 42, in gmail_service
+    creds = Credentials.from_authorized_user_pickle(token, ["https://www.googleapis.com/auth/gmail.modify"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Credentials' has no attribute 'from_authorized_user_pickle'. Did you mean: 'from_authorized_user_file'?

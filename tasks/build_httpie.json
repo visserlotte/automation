@@ -1,0 +1,8 @@
+{
+  "steps": [
+    {"goal": "git: clone https://github.com/httpie/httpie -> repo_httpie", "retries": 2},
+    {"goal": "run: python -m pip install -U pip wheel", "retries": 1, "allow_fail": true},
+    {"goal": "run: pip install -e repo_httpie[dev]", "retries": 1},
+    {"goal": "run: pytest -q", "retries": 1, "allow_fail": true}
+  ]
+}
