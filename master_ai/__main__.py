@@ -49,9 +49,11 @@ def cmd_run_goal(ns: argparse.Namespace) -> None:
 
 
 def cmd_agent_run(ns):
-    from master_ai.runtime.agent import Agent
     from pathlib import Path
-    runs = Path('artifacts/runs')
+
+    from master_ai.runtime.agent import Agent
+
+    runs = Path("artifacts/runs")
     agent = Agent(goal=ns.goal, root=runs, safe_mode=(not ns.unsafe))
     rc = agent.run()
     raise SystemExit(rc)
@@ -65,6 +67,7 @@ def cmd_self_update(ns: argparse.Namespace) -> None:
         raise SystemExit(0 if ok else 1)
     else:
         from master_ai.self_update.apply import apply_update
+
         ok = apply_update(_P(ns.bundle), _P(ns.manifest), _P.cwd())
         raise SystemExit(0 if ok else 1)
 
@@ -75,8 +78,7 @@ def main() -> None:
 
     sp = sub.add_parser("agent-run", help="Run the agent against a goal")
     sp.add_argument("--goal", required=True)
-    sp.add_argument("--unsafe", action="store_true",
-                    help="Disable allowlist and use shell=True")
+    sp.add_argument("--unsafe", action="store_true", help="Disable allowlist and use shell=True")
     sp.set_defaults(func=cmd_agent_run)
 
     sp = sub.add_parser("self-check", help="Run internal lint/test gates")
@@ -86,8 +88,7 @@ def main() -> None:
     sp.add_argument("--goal", required=True)
     sp.set_defaults(func=cmd_plan)
 
-    sp = sub.add_parser("run-goal",
-                        help="Plan, code, test, and stage a tiny project for a goal")
+    sp = sub.add_parser("run-goal", help="Plan, code, test, and stage a tiny project for a goal")
     sp.add_argument("--goal", required=True)
     sp.set_defaults(func=cmd_run_goal)
 

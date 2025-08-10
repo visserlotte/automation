@@ -11,4 +11,5 @@ def do_work(*_a, **_k):
 
 class HelperThing:
     """Auto-added shim by fixers.py (until real implementation exists)."""
+
     pass

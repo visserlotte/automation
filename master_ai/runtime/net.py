@@ -1,22 +1,29 @@
 from __future__ import annotations
 
-from pathlib import Path
 import time
+from pathlib import Path
+
 import requests
 
 # Optional event logging: fall back to a no-op if unavailable.
 try:
     from .events import log as _emit  # type: ignore
 except Exception:  # pragma: no cover
+
     def _emit(*_a, **_k):  # noqa: D401 - tiny shim
         pass
 
+
 UA = "MasterAI/0.1 (+https://example.invalid)"
+
 
 def _get(url: str, *, stream: bool = False, timeout: int = 30) -> requests.Response:
     return requests.get(url, headers={"User-Agent": UA}, stream=stream, timeout=timeout)
 
-def fetch_file(url: str, dest: Path, retries: int = 3, backoff: float = 0.6, timeout: int = 30) -> Path:
+
+def fetch_file(
+    url: str, dest: Path, retries: int = 3, backoff: float = 0.6, timeout: int = 30
+) -> Path:
     """Download URL to dest with simple retry + backoff."""
     dest = Path(dest)
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -38,6 +45,7 @@ def fetch_file(url: str, dest: Path, retries: int = 3, backoff: float = 0.6, tim
             if i < retries:
                 time.sleep(backoff * i)
     raise RuntimeError(f"failed to fetch {url}: {last_err}")
+
 
 def fetch_text(url: str, timeout: int = 30) -> str:
     r = _get(url, stream=False, timeout=timeout)

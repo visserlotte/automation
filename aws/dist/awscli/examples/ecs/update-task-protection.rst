@@ -43,4 +43,3 @@ Output::
     }
 
 For more formation on task protection, see `Protect your Amazon ECS tasks from being terminated by scale-in events <https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html>`__ in the *Amazon ECS Developer Guide*.
-

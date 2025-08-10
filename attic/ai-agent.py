@@ -19,7 +19,9 @@ KEYWORDS = ["error", "crash", "failed", "traceback"]
 POLL_INTERVAL = 60  # seconds
 
 # ------------------ LOGGING SETUP ------------------ #
-logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(levelname)s: %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="[%(asctime)s] %(levelname)s: %(message)s"
+)
 
 
 # ------------------ AUTHENTICATION ------------------ #
@@ -56,7 +58,10 @@ def send_email(service, to, subject, body):
 # ------------------ MAIN MONITOR LOOP ------------------ #
 def check_emails(service):
     results = (
-        service.users().messages().list(userId="me", labelIds=["INBOX"], q="is:unread").execute()
+        service.users()
+        .messages()
+        .list(userId="me", labelIds=["INBOX"], q="is:unread")
+        .execute()
     )
     messages = results.get("messages", [])
 
@@ -66,7 +71,12 @@ def check_emails(service):
 
     for msg in messages:
         msg_id = msg["id"]
-        full_msg = service.users().messages().get(userId="me", id=msg_id, format="full").execute()
+        full_msg = (
+            service.users()
+            .messages()
+            .get(userId="me", id=msg_id, format="full")
+            .execute()
+        )
         snippet = full_msg.get("snippet", "").lower()
 
         if any(keyword in snippet for keyword in KEYWORDS):

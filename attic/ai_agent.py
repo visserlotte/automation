@@ -75,7 +75,10 @@ def poll_loop():
         try:
             # ── read *unread* messages sent to FROM_ADDRESS
             resp = (
-                service.users().messages().list(userId="me", q="is:unread", maxResults=10).execute()
+                service.users()
+                .messages()
+                .list(userId="me", q="is:unread", maxResults=10)
+                .execute()
             )
             for m in resp.get("messages", []):
                 full = service.users().messages().get(userId="me", id=m["id"]).execute()

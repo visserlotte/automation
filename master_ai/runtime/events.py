@@ -1,14 +1,15 @@
 from __future__ import annotations
 
-from pathlib import Path
 import json
 import time
+from pathlib import Path
 
 ISO = "%Y-%m-%dT%H:%M:%S%z"
 
 
 class EventBus:
     """Append-only JSONL event log for a single run directory."""
+
     def __init__(self, run_dir: Path) -> None:
         self.run_dir = Path(run_dir)
         self.run_dir.mkdir(parents=True, exist_ok=True)
@@ -23,7 +24,7 @@ class EventBus:
 
 
 # --- module-level function expected by callers ---
-def log(kind: str, data: dict, *, bus: "EventBus" = None) -> None:
+def log(kind: str, data: dict, *, bus: EventBus = None) -> None:
     """Log an event; if no bus provided, silently ignore."""
     try:
         if bus:
@@ -61,7 +62,7 @@ def latest_info(run_dir: Path) -> dict:
         "goal": None,
         "safe": None,
         "started": None,
-        "finished": None
+        "finished": None,
     }
     for e in read_events(Path(run_dir)):
         k, d = e.get("kind"), e.get("data", {})

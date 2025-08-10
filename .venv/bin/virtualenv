@@ -1,4 +1,4 @@
-#!/home/ubuntu/automation/.venv/bin/python3
+#!/home/ubuntu/automation/.venv/bin/python
 import sys
 from virtualenv.__main__ import run_with_catch
 if __name__ == '__main__':

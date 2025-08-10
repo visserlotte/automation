@@ -3,7 +3,18 @@ from __future__ import annotations
 import subprocess
 from collections.abc import Sequence
 
-ALLOWED = {"python", "pytest", "pip", "echo", "ls", "cat", "mkdir", "touch", "sh", "bash"}
+ALLOWED = {
+    "python",
+    "pytest",
+    "pip",
+    "echo",
+    "ls",
+    "cat",
+    "mkdir",
+    "touch",
+    "sh",
+    "bash",
+}
 
 
 def run(

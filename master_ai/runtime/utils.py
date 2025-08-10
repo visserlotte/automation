@@ -1,30 +1,37 @@
 from __future__ import annotations
 
-from pathlib import Path
 import os
 import subprocess
-from typing import Dict, Optional
+from pathlib import Path
 
 # Where runs land by default (used by other modules too)
 RUNS_ROOT = Path("artifacts/runs")
+
 
 def ensure_dir(p: Path | str) -> Path:
     p = Path(p)
     p.mkdir(parents=True, exist_ok=True)
     return p
 
+
 def _bash_available() -> bool:
     try:
-        subprocess.run(["/bin/bash", "-lc", "true"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(
+            ["/bin/bash", "-lc", "true"],
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
         return True
     except Exception:
         return False
+
 
 def run_stream(
     cmd: str,
     *,
     cwd: Path | str,
-    env_add: Optional[Dict[str, str]] = None,
+    env_add: dict[str, str] | None = None,
     safe_mode: bool = True,
 ) -> subprocess.Popen:
     """

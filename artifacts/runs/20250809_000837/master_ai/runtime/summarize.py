@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 import re
 from html import unescape
+
 
 def summarize_text(txt: str, max_lines: int = 5) -> str:
     """
@@ -16,6 +18,8 @@ def summarize_text(txt: str, max_lines: int = 5) -> str:
     lines = [ln.strip() for ln in s.splitlines() if ln.strip()]
     return "\n".join(lines[:max_lines])
 
+
 def summarize_url(url: str, max_lines: int = 5) -> str:
     from .net import fetch_text
+
     return summarize_text(fetch_text(url), max_lines)

@@ -1,4 +1,4 @@
-#!/home/ubuntu/automation/.venv/bin/python3
+#!/home/ubuntu/automation/.venv/bin/python
 import sys
 from identify.cli import main
 if __name__ == '__main__':

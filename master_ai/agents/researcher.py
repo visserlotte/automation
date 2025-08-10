@@ -12,5 +12,8 @@ class Finding:
 def gather_context(goal: str) -> list[Finding]:
     # Offline stub: later wire to web or local KB.
     return [
-        Finding(source="local", summary=f"No external research; working offline for goal: {goal}")
+        Finding(
+            source="local",
+            summary=f"No external research; working offline for goal: {goal}",
+        )
     ]

@@ -1,11 +1,12 @@
 from __future__ import annotations
 
+import json
+import re
+import shlex
 from dataclasses import dataclass
 from pathlib import Path
-import json
-import shlex
-import re
 from typing import Any
+
 
 @dataclass
 class Step:
@@ -30,8 +31,10 @@ class Step:
     allow_fail: bool = False
     timeout: int | None = None  # seconds (only used where supported)
 
+
 def _strip(s: str) -> str:
     return s.strip()
+
 
 def _parse_kv_blob(blob: str) -> dict[str, str]:
     out: dict[str, str] = {}
@@ -43,12 +46,14 @@ def _parse_kv_blob(blob: str) -> dict[str, str]:
         out[k.strip()] = v.strip()
     return out
 
+
 def _json_or_text(s: str) -> Any:
     s = s.strip()
     try:
         return json.loads(s)
     except Exception:
         return s
+
 
 def _load_taskfile(path: Path) -> list[Any]:
     """
@@ -78,6 +83,7 @@ def _load_taskfile(path: Path) -> list[Any]:
         if path.suffix.lower() in {".yml", ".yaml"}:
             try:
                 import yaml  # type: ignore
+
                 data = yaml.safe_load(text)  # type: ignore
                 items = _extract(data)
             except Exception as e:  # pragma: no cover
@@ -91,6 +97,7 @@ def _load_taskfile(path: Path) -> list[Any]:
         raise ValueError("taskfile: no steps/goals found")
     return items
 
+
 def _apply_meta(steps: list[Step], meta: dict[str, Any]) -> list[Step]:
     r = int(meta.get("retries", 0) or 0)
     a = bool(meta.get("allow_fail", False))
@@ -102,22 +109,23 @@ def _apply_meta(steps: list[Step], meta: dict[str, Any]) -> list[Step]:
         s.timeout = t_int
     return steps
 
+
 def _steps_for_goal(goal: str) -> list[Step]:
     g = goal.strip()
 
     # run: <shell>
     if g.startswith("run:"):
-        cmd = g[len("run:"):].strip()
+        cmd = g[len("run:") :].strip()
         return [Step(op="exec", desc=f"run shell: {cmd}", cmd=cmd)]
 
     # py: <code>
     if g.startswith("py:"):
-        code = g[len("py:"):].lstrip("\n")
+        code = g[len("py:") :].lstrip("\n")
         return [Step(op="py", desc="run python snippet", code=code)]
 
     # write: path --- content
     if g.startswith("write:"):
-        rest = g[len("write:"):].strip()
+        rest = g[len("write:") :].strip()
         if "---" not in rest:
             raise ValueError("write: needs 'path --- content'")
         path, content = map(_strip, rest.split("---", 1))
@@ -125,7 +133,7 @@ def _steps_for_goal(goal: str) -> list[Step]:
 
     # patch: path --- before --- after
     if g.startswith("patch:"):
-        rest = g[len("patch:"):].strip()
+        rest = g[len("patch:") :].strip()
         parts = [p.strip() for p in rest.split("---")]
         if len(parts) != 3:
             raise ValueError("patch: needs 'path --- before --- after'")
@@ -134,7 +142,7 @@ def _steps_for_goal(goal: str) -> list[Step]:
 
     # edit: structured edits
     if g.startswith("edit:"):
-        payload = g[len("edit:"):].strip()
+        payload = g[len("edit:") :].strip()
         if payload.startswith("["):
             edits = json.loads(payload)
         else:
@@ -145,7 +153,7 @@ def _steps_for_goal(goal: str) -> list[Step]:
 
     # scaffold: {"dirs":[...],"files":{...}}
     if g.startswith("scaffold:"):
-        payload = g[len("scaffold:"):].strip()
+        payload = g[len("scaffold:") :].strip()
         layout = _json_or_text(payload)
         if not isinstance(layout, dict):
             raise ValueError("scaffold: payload must be a JSON object with 'dirs'/'files'")
@@ -153,7 +161,7 @@ def _steps_for_goal(goal: str) -> list[Step]:
 
     # fetch: url=...; dest=...  OR  fetch: URL -> DEST
     if g.startswith("fetch:"):
-        payload = g[len("fetch:"):].strip()
+        payload = g[len("fetch:") :].strip()
         m = re.match(r"^(?P<url>\S+)\s*->\s*(?P<dest>\S+)$", payload)
         if m:
             url = m.group("url")
@@ -167,14 +175,14 @@ def _steps_for_goal(goal: str) -> list[Step]:
 
     # pip: <args...>
     if g.startswith("pip:"):
-        args = shlex.split(g[len("pip:"):].strip())
+        args = shlex.split(g[len("pip:") :].strip())
         if not args:
             raise ValueError("pip: needs arguments, e.g. 'pip: install requests'")
         return [Step(op="pip", desc=f"pip {' '.join(args)}", args=args)]
 
     # git: clone URL -> DIR  OR raw args
     if g.startswith("git:"):
-        payload = g[len("git:"):].strip()
+        payload = g[len("git:") :].strip()
         m = re.match(r"^clone\s+(?P<url>\S+)\s*->\s*(?P<dest>\S+)$", payload)
         if m:
             url = m.group("url")
@@ -192,11 +200,12 @@ def _steps_for_goal(goal: str) -> list[Step]:
     # fallback => shell
     return [Step(op="exec", desc=f"run shell: {g}", cmd=g)]
 
+
 def make_plan(goal: str) -> list[Step]:
     g = goal.strip()
 
     if g.startswith("taskfile:"):
-        payload = g[len("taskfile:"):].strip()
+        payload = g[len("taskfile:") :].strip()
         d = _parse_kv_blob(payload.replace("\n", " "))
         raw_path = d.get("path")
         if not raw_path:

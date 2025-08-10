@@ -193,4 +193,3 @@ Output::
     }
 
 For more information, see `Service network endpoints <https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-access-service-networks.html>`__ in the *AWS PrivateLink User Guide*.
-

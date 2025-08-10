@@ -1,0 +1,10 @@
+.venv/
+artifacts/
+repo_*/
+dl/
+node_modules/
+build/
+dist/
+__pycache__/
+*.egg-info/
+attic/

@@ -3,11 +3,12 @@ To create a comprehensive `Watchdog.py` script, we need to understand the key fu
 Below is a complete and enhanced version of a `Watchdog.py` script, ready to be used or further improved based on additional specific requirements:
 
 ```python
+import logging
 import sys
 import time
-import logging
-from watchdog.observers import Observer
+
 from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(message)s',

@@ -2,14 +2,15 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Optional
 
 # Optional event logger: if unavailable, no-op
 try:
     from .events import log as _emit  # type: ignore
 except Exception:  # pragma: no cover
+
     def _emit(*_a, **_k):  # noqa: D401 - tiny shim
         pass
+
 
 # Resolve repo root from this file location: …/master_ai/runtime/fixers.py
 # parents[0]=runtime, [1]=master_ai, [2]=repo root
@@ -35,7 +36,7 @@ _NO_MODULE_PATTERNS = [
 ]
 
 
-def _parse_missing_symbol(error_text: str) -> Optional[tuple[str, str]]:
+def _parse_missing_symbol(error_text: str) -> tuple[str, str] | None:
     """Extract (missing_name, module) when a symbol import fails."""
     for rx in _MISSING_IMPORT_PATTERNS:
         m = rx.search(error_text)
@@ -44,7 +45,7 @@ def _parse_missing_symbol(error_text: str) -> Optional[tuple[str, str]]:
     return None
 
 
-def _parse_missing_module(error_text: str) -> Optional[str]:
+def _parse_missing_module(error_text: str) -> str | None:
     """Extract a missing module 'master_ai.xxx' when the module import fails."""
     for rx in _NO_MODULE_PATTERNS:
         m = rx.search(error_text)
@@ -53,7 +54,7 @@ def _parse_missing_module(error_text: str) -> Optional[str]:
     return None
 
 
-def _module_to_file(module: str) -> Optional[Path]:
+def _module_to_file(module: str) -> Path | None:
     """
     Convert 'master_ai.something' to repo file path, if inside our tree.
     Do NOT try to create 'master_ai.py' for the top-level package.
@@ -65,7 +66,7 @@ def _module_to_file(module: str) -> Optional[Path]:
     return PROJ_ROOT / (module.replace(".", "/") + ".py")
 
 
-def _ensure_module_file(module: str, *, bus=None) -> Optional[Path]:
+def _ensure_module_file(module: str, *, bus=None) -> Path | None:
     """
     If a module file is missing inside our repo, create a minimal stub file.
     Returns the path if created or already exists; None if outside tree.
@@ -77,7 +78,11 @@ def _ensure_module_file(module: str, *, bus=None) -> Optional[Path]:
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_text("# auto-created by fixers.py\n", encoding="utf-8")
         try:
-            _emit("log", {"step": 1, "line": f"fixer: created — module file {dst}"}, bus=bus)
+            _emit(
+                "log",
+                {"step": 1, "line": f"fixer: created — module file {dst}"},
+                bus=bus,
+            )
         except Exception:
             pass
     return dst

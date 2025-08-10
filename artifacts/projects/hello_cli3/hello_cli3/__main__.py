@@ -1,1 +1,3 @@
-from . import app; print(app.run())
+from . import app
+
+print(app.run())

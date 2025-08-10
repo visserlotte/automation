@@ -28,7 +28,9 @@ def log(project, role, content):
     pj = ensure(project)
     f = pj / "chat_history.json"
     data = _load(f)
-    data.setdefault("dialog", []).append({"t": time.time(), "role": role, "content": content})
+    data.setdefault("dialog", []).append(
+        {"t": time.time(), "role": role, "content": content}
+    )
     _save(f, data)
 
 

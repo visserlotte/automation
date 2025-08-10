@@ -287,8 +287,8 @@ Contents of ``ecs-simple-service-ebs.json``::
                     "roleArn":"arn:aws:iam::123456789012:role/ecsInfrastructureRole",
                     "volumeType": "gp3",
                     "sizeInGiB": 100,
-                    "iops": 3000, 
-                    "throughput": 125, 
+                    "iops": 3000,
+                    "throughput": 125,
                     "filesystemType": "ext4"
                 }
             }

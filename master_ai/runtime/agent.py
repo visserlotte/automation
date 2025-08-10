@@ -1,21 +1,19 @@
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass
 from pathlib import Path
-import time
-import subprocess
-from typing import Optional
 
-from master_ai.agents.planner import make_plan, Step
-from master_ai.runtime.utils import RUNS_ROOT, run_stream
+from master_ai.agents.planner import Step, make_plan
 from master_ai.runtime.events import EventBus, log
 from master_ai.runtime.fileops import (
-    write_file,
-    patch_file,
     apply_structured_edits,
+    patch_file,
     scaffold_layout,
+    write_file,
 )
 from master_ai.runtime.net import fetch_file
+from master_ai.runtime.utils import run_stream
 
 
 @dataclass
@@ -31,7 +29,11 @@ class Agent:
         logs_dir.mkdir(parents=True, exist_ok=True)
 
         bus = EventBus(run_dir)
-        log("run_started", {"run_id": run_id, "goal": self.goal, "safe": self.safe_mode}, bus=bus)
+        log(
+            "run_started",
+            {"run_id": run_id, "goal": self.goal, "safe": self.safe_mode},
+            bus=bus,
+        )
 
         try:
             steps = make_plan(self.goal)
@@ -39,7 +41,7 @@ class Agent:
             log("log", {"step": 0, "line": f"planner error: {e}"}, bus=bus)
             log("run_finished", {"result": "FAILED"}, bus=bus)
             print(f"[agent] run={run_id} result=FAILED")
-            print(f"[agent] events: {run_dir/'events.jsonl'}")
+            print(f"[agent] events: {run_dir / 'events.jsonl'}")
             print(f"[agent] logs:   {logs_dir}")
             return 1
 
@@ -48,8 +50,12 @@ class Agent:
 
         try:
             for idx, step in enumerate(steps, start=1):
-                log("thought", {"text": f"Step {idx}/{len(steps)}: {step.desc}"}, bus=bus)
-                logfile: Optional[Path] = None
+                log(
+                    "thought",
+                    {"text": f"Step {idx}/{len(steps)}: {step.desc}"},
+                    bus=bus,
+                )
+                logfile: Path | None = None
 
                 # Retry loop (default 1 attempt)
                 attempts = getattr(step, "retries", 1) or 1
@@ -61,7 +67,14 @@ class Agent:
                 for attempt in range(1, attempts + 1):
                     if attempts > 1:
                         if attempt > 1:
-                            log("log", {"step": idx, "line": f"retry {attempt}/{attempts} after failure…"}, bus=bus)
+                            log(
+                                "log",
+                                {
+                                    "step": idx,
+                                    "line": f"retry {attempt}/{attempts} after failure…",
+                                },
+                                bus=bus,
+                            )
                     rc, logfile = self._run_one(step, idx, run_dir, logs_dir, timeout_s, bus)
                     if rc == 0:
                         break
@@ -69,15 +82,24 @@ class Agent:
                 elapsed = round(time.time() - t0_step, 3)
                 log(
                     "action_done",
-                    {"step": idx, "rc": rc, "seconds": elapsed, "log": str(logfile) if logfile else None},
+                    {
+                        "step": idx,
+                        "rc": rc,
+                        "seconds": elapsed,
+                        "log": str(logfile) if logfile else None,
+                    },
                     bus=bus,
                 )
-                log("progress", {"current": idx, "total": len(steps), "eta": None}, bus=bus)
+                log(
+                    "progress",
+                    {"current": idx, "total": len(steps), "eta": None},
+                    bus=bus,
+                )
 
                 if rc != 0 and not allow_fail:
                     log("run_finished", {"result": "FAILED"}, bus=bus)
                     print(f"[agent] run={run_id} result=FAILED")
-                    print(f"[agent] events: {run_dir/'events.jsonl'}")
+                    print(f"[agent] events: {run_dir / 'events.jsonl'}")
                     print(f"[agent] logs:   {logs_dir}")
                     return 1
 
@@ -86,13 +108,13 @@ class Agent:
             log("log", {"step": 0, "line": "KeyboardInterrupt: aborting run"}, bus=bus)
             log("run_finished", {"result": "ABORTED"}, bus=bus)
             print(f"[agent] run={run_id} result=ABORTED")
-            print(f"[agent] events: {run_dir/'events.jsonl'}")
+            print(f"[agent] events: {run_dir / 'events.jsonl'}")
             print(f"[agent] logs:   {logs_dir}")
             return 130
 
         log("run_finished", {"result": "OK"}, bus=bus)
         print(f"[agent] run={run_id} result=OK")
-        print(f"[agent] events: {run_dir/'events.jsonl'}")
+        print(f"[agent] events: {run_dir / 'events.jsonl'}")
         print(f"[agent] logs:   {logs_dir}")
         return 0
 
@@ -104,15 +126,15 @@ class Agent:
         idx: int,
         run_dir: Path,
         logs_dir: Path,
-        timeout_s: Optional[float],
+        timeout_s: float | None,
         bus: EventBus,
-    ) -> tuple[int, Optional[Path]]:
+    ) -> tuple[int, Path | None]:
         """
         Execute a single step once; return (rc, logfile_path_or_None).
         Supports timeouts for long-running exec/git commands.
         """
         rc = 0
-        logfile: Optional[Path] = None
+        logfile: Path | None = None
         t_start = time.time()
 
         try:
@@ -123,14 +145,17 @@ class Agent:
 
             elif step.op == "git" and step.args:
                 cmd = " ".join(["git"] + step.args)
-                rc, logfile = self._run_streaming_cmd(
-                    idx, cmd, run_dir, logs_dir, timeout_s, bus
-                )
+                rc, logfile = self._run_streaming_cmd(idx, cmd, run_dir, logs_dir, timeout_s, bus)
 
             elif step.op == "write" and step.path is not None and step.content is not None:
                 write_file(Path(step.path), step.content, cwd=run_dir)
 
-            elif step.op == "patch" and step.path and (step.before is not None) and (step.after is not None):
+            elif (
+                step.op == "patch"
+                and step.path
+                and (step.before is not None)
+                and (step.after is not None)
+            ):
                 patch_file(Path(step.path), step.before, step.after, cwd=run_dir)
 
             elif step.op == "edit" and step.edits:
@@ -143,7 +168,14 @@ class Agent:
                 locs: dict = {}
                 try:
                     exec(step.code, {}, locs)  # noqa: S102
-                    log("log", {"step": idx, "line": f"py: executed, locals={list(locs.keys())}"}, bus=bus)
+                    log(
+                        "log",
+                        {
+                            "step": idx,
+                            "line": f"py: executed, locals={list(locs.keys())}",
+                        },
+                        bus=bus,
+                    )
                 except Exception as e:  # noqa: BLE001
                     rc = 1
                     log("log", {"step": idx, "line": f"py error: {e}"}, bus=bus)
@@ -154,7 +186,11 @@ class Agent:
 
             else:
                 rc = 1
-                log("log", {"step": idx, "line": f"unknown or malformed step: {step.op}"}, bus=bus)
+                log(
+                    "log",
+                    {"step": idx, "line": f"unknown or malformed step: {step.op}"},
+                    bus=bus,
+                )
 
         except KeyboardInterrupt:
             raise  # handled by outer try/except
@@ -175,9 +211,9 @@ class Agent:
         cmd: str,
         run_dir: Path,
         logs_dir: Path,
-        timeout_s: Optional[float],
+        timeout_s: float | None,
         bus: EventBus,
-    ) -> tuple[int, Optional[Path]]:
+    ) -> tuple[int, Path | None]:
         """
         Start a subprocess and stream lines to events and a log file.
         Enforces an optional timeout by killing the process if exceeded.
@@ -205,7 +241,14 @@ class Agent:
                                 proc.kill()
                             except Exception:
                                 pass
-                            log("log", {"step": idx, "line": f"timeout: killed process after {timeout_s}s"}, bus=bus)
+                            log(
+                                "log",
+                                {
+                                    "step": idx,
+                                    "line": f"timeout: killed process after {timeout_s}s",
+                                },
+                                bus=bus,
+                            )
                             return 1, logfile
                         time.sleep(0.05)
         except KeyboardInterrupt:

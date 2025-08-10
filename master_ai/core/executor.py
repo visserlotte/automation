@@ -9,7 +9,18 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 
-ALLOWED_CMDS = {"python", "pytest", "pip", "echo", "ls", "cat", "mkdir", "touch", "sh", "bash"}
+ALLOWED_CMDS = {
+    "python",
+    "pytest",
+    "pip",
+    "echo",
+    "ls",
+    "cat",
+    "mkdir",
+    "touch",
+    "sh",
+    "bash",
+}
 
 
 @dataclass

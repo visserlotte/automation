@@ -4,10 +4,9 @@ from __future__ import annotations
 import json
 import time
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any
 
 import streamlit as st
-
 
 # ---------- Config ----------
 ROOT = Path.cwd()
@@ -21,15 +20,15 @@ STEP_LOG_MAX_BYTES = 64 * 1024  # 64 KB
 
 
 # ---------- Helpers ----------
-def list_runs(root: Path = RUNS_ROOT) -> List[Path]:
+def list_runs(root: Path = RUNS_ROOT) -> list[Path]:
     runs = [p for p in root.iterdir() if p.is_dir()]
     runs.sort()
     return runs
 
 
-def read_events(run_dir: Path) -> Tuple[List[Dict[str, Any]], float]:
+def read_events(run_dir: Path) -> tuple[list[dict[str, Any]], float]:
     ev_path = run_dir / "events.jsonl"
-    events: List[Dict[str, Any]] = []
+    events: list[dict[str, Any]] = []
     if not ev_path.exists():
         return events, 0.0
     with ev_path.open() as f:
@@ -46,8 +45,8 @@ def read_events(run_dir: Path) -> Tuple[List[Dict[str, Any]], float]:
     return events, mtime
 
 
-def extract_info(events: List[Dict[str, Any]]) -> Dict[str, Any]:
-    info: Dict[str, Any] = {
+def extract_info(events: list[dict[str, Any]]) -> dict[str, Any]:
+    info: dict[str, Any] = {
         "run_id": None,
         "goal": None,
         "safe": None,
@@ -164,7 +163,13 @@ cols[3].metric("Finished", info["finished"] or "—")
 cols[4].metric("Goal", info["goal"] or "—")
 
 # Status banner
-status_text = f"Run finished: {info['result']}" if info["result"] else "Run in progress…" if info["total"] else "Waiting for steps…"
+status_text = (
+    f"Run finished: {info['result']}"
+    if info["result"]
+    else "Run in progress…"
+    if info["total"]
+    else "Waiting for steps…"
+)
 if info["result"] == "OK":
     st.success(status_text)
 elif info["result"]:

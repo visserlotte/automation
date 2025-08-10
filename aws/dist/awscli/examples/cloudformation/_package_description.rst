@@ -53,4 +53,3 @@ present in the S3 bucket to prevent unnecessary uploads. If the values match, th
 command doesn't upload the artifacts. Use the ``--force-upload flag`` to skip this
 check and always upload the artifacts. The command uses MD5 checksums to compare
 files by default. If MD5 is not available in the environment, a SHA256 checksum is used.
-

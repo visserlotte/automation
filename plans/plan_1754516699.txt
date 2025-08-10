@@ -1,20 +1,20 @@
-1. **Define the Scope and Criteria**  
+1. **Define the Scope and Criteria**
    - Determine the specific features, functionalities, and elements to be tested in the email (e.g., layout, links, images, personalization, subject line).
 
-2. **Prepare Test Environment**  
+2. **Prepare Test Environment**
    - Set up an email testing environment, ensuring compatibility across various email clients, devices, and browsers.
-  
-3. **Draft Sample Content and Test Cases**  
+
+3. **Draft Sample Content and Test Cases**
    - Create sample email content with variations (e.g., plain text, HTML) and develop test cases outlining expected outcomes for different scenarios.
 
-4. **Conduct Functional Testing**  
+4. **Conduct Functional Testing**
    - Test all interactive and dynamic elements such as links, buttons, and personalization tokens to confirm accuracy and functionality.
 
-5. **Perform Visual Inspections**  
+5. **Perform Visual Inspections**
    - Check the email design and layout across multiple devices and platforms to ensure it displays correctly and consistently.
 
-6. **Verify Deliverability and Accessibility**  
+6. **Verify Deliverability and Accessibility**
    - Ensure the email is delivered to the inbox (not spam) on various email services and verify that content complies with accessibility standards.
 
-7. **Gather Feedback and Document Findings**  
+7. **Gather Feedback and Document Findings**
    - Compile feedback from the test results, document any issues, and refine the email as needed before final approval and deployment.

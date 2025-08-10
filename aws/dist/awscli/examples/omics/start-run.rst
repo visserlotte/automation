@@ -45,4 +45,3 @@ You can also load source files from Amazon Omics storage, by using service-speci
         "ref_fasta": "omics://123456789012.storage.us-west-2.amazonaws.com/1234567890/reference/1234567890",
         "ref_fasta_index": "omics://123456789012.storage.us-west-2.amazonaws.com/1234567890/reference/1234567890/index"
     }
-

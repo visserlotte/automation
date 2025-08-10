@@ -51,7 +51,10 @@ def choose_model(metric: str = "cheap") -> str:
     if metric == "premium":
         return "gpt-4o"
     if metric == "speed":
-        return min(PRICES, key=lambda m: (PRICES[m], m not in ("gpt-3.5-turbo", "claude-3-haiku")))
+        return min(
+            PRICES,
+            key=lambda m: (PRICES[m], m not in ("gpt-3.5-turbo", "claude-3-haiku")),
+        )
     # default: cheapest
     return min(PRICES, key=PRICES.get)
 
