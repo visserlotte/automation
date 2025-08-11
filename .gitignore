@@ -13,3 +13,9 @@ attic/
 .env
 **/*client_secret*.json
 **/credentials*.json
+
+# Secrets
+.env
+credentials.json
+**/*client_secret*.json
+**/credentials*.json
