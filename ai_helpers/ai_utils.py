@@ -2,12 +2,14 @@
 
 import json
 import pathlib
+from pathlib import Path
 
 from ai_helpers.master_ai_config import openai
 
-chat_log_path = (
-    lambda project: pathlib.Path.home() / "automation" / "projects" / project / "chat_history.json"
-)
+
+def chat_log_path(project: str) -> pathlib.Path:
+    """Return ~/automation/projects/<project>/chat_history.json."""
+    return pathlib.Path.home() / "automation" / "projects" / project / "chat_history.json"
 
 
 def last_msgs(project, n=10):
@@ -39,12 +41,14 @@ def gpt(prompt: str, history=None) -> str:
 
 
 # === STATUS HOOK ===
-from pathlib import Path
 
 
 def _last_update() -> str:
     """Return human note of the most recent self-edit."""
     plans = sorted(Path("plans").glob("plan_*.txt"), key=lambda p: p.stat().st_mtime, reverse=True)
     if plans:
-        return f"Latest micro-project: {plans[0].name} (edited {plans[0].stat().st_mtime:%Y-%m-%d %H:%M})"
+        return (
+            f"Latest micro-project: {plans[0].name} "
+            f"(edited {plans[0].stat().st_mtime:%Y-%m-%d %H:%M})"
+        )
     return "No edits recorded yet."

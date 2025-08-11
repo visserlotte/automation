@@ -1,6 +1,7 @@
 import os
 import pathlib
 
+import openai
 from dotenv import load_dotenv
 
 ENV_PATH = pathlib.Path.home() / "automation" / ".env"
@@ -25,7 +26,5 @@ missing = [
 ]
 if missing:
     print(f"[config] ⚠️ missing env vars: {', '.join(missing)} – continuing in offline mode")
-
-import openai
 
 openai.api_key = OPENAI_API_KEY

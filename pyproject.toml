@@ -2,7 +2,6 @@
 line-length = 100
 target-version = "py312"
 
-# Keep Ruff from scanning noisy/vendor dirs when run directly
 extend-exclude = [
   ".venv",
   "artifacts",
@@ -15,14 +14,10 @@ extend-exclude = [
 ]
 
 [tool.ruff.lint]
-# Enable import sorting via Ruff (so we don't need isort as a hook)
 select = ["E", "F", "B", "C90", "I"]
 
 [tool.ruff.lint.per-file-ignores]
-# Known long UI line
 "ui/studio.py" = ["E501"]
-# Allow big helper functions for now
 "master_ai/runtime/agent.py" = ["C901"]
-"master_ai/agents/planner.py" = ["C901", "B904"]   # we also fix B904 below, but keep as safety
-# Long regex patterns live here
+"master_ai/agents/planner.py" = ["C901", "B904"]
 "master_ai/runtime/fixers.py" = ["E501"]
