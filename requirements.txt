@@ -7,3 +7,5 @@ PyQt6==6.7.0
 streamlit==1.35.0
 openai
 python-dotenv
+Flask
+pytest
